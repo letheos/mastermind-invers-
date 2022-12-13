@@ -125,6 +125,7 @@ def surface():
                         if event.type == pygame.QUIT:
                                 exit()
 
+print("zizi")
 
 if __name__ == "__main__":
     surface()
