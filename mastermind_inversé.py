@@ -1,7 +1,7 @@
 import pygame
 import mm2
 import random
-
+import time
 def shuffle_list(lst):
     # Créer une copie de la liste
     shuffled_list = lst.copy()
@@ -99,16 +99,17 @@ def babouin_big_cerveau(listecouleurs, couleursessai, precedents):
         couleur = mm2.TabCouleur[random.randint(0, 7)]
         while couleur in couleursessai:
             couleur = mm2.TabCouleur[random.randint(0, 7)]
-        for babouin_folie in range(4):
+        couleursessai.append(couleur)
+        for babouin_folie in range(5):
             babouin_try.append(couleur)
         print(babouin_try)
         return[babouin_try,listecouleurs,couleursessai,precedents]
 
 
-
+'''
 babouin_big_cerveau([(0, 0, 0),(0, 0, 0),(128,128,128),(128,128,128),(0,0,255)], [], [])
 
-'''
+
         #si la liste a déja été essayé
         if len(listecouleurs) == 5:
             babouin_try = listecouleurs
@@ -184,16 +185,21 @@ def surface():
                         exit()
 
         if intelligence == 0:
-            couleur = [mm2.TabCouleur[random.randint(0, 7)] for x in range(5)]
-            mm2.afficherCombinaison(fenetre, couleur, x)
+            essai = [mm2.TabCouleur[random.randint(0, 7)] for x in range(5)]
+            mm2.afficherCombinaison(fenetre, essai, x)
         elif intelligence == 1:
             # listecouleurs = liste des couleurs definies dans le secret
             # couleuressai = les couleurs précédentes essayées
             # précédents = les anciens essais
-            prop = babouin_big_cerveau(listecouleurs, couleursessai, précédents)
-            res == [Blanc(prop, secret), defNoir(prop, secret)]
-            mm2.afficherCombinaison(fenetre, prop, x)
-        babouin_infini = True
+            print((listecouleurs, couleursessai, précédents))
+            total = babouin_big_cerveau(listecouleurs, couleursessai, précédents)
+            essai = total[0]
+            listecouleurs = total[1]
+            couleursessai = total[2]
+            précédents = total[3]
+            mm2.afficherCombinaison(fenetre,essai, x)
+        elif intelligence == 3
+        '''babouin_infini = True
         while babouin_infini == True:
 
             for event in pygame.event.get():
@@ -211,15 +217,11 @@ def surface():
                         mm2.afficherResultat(fenetre, res, x)
                         pygame.display.update()
                     if event.key == pygame.K_v:
-                        babouin_infini = False
-        '''a = Blanc(prop, secret)
-        res = [a, defNoir(prop, secret)]
+                        babouin_infini = False'''
+        a = Blanc(essai, secret)
+        res = [a, defNoir(essai, secret)]
         mm2.afficherResultat(fenetre, res, x)
-        pygame.display.update()'''
-        if res[0] + res[1] >= 1:
-            for x in range(res[0] + res[1]):
-                listecouleurs.append(prop[0])
-            print(listecouleurs)
+        pygame.display.update()
         if res[1] == 5:
             myfont = pygame.font.SysFont("monospace", 40)
             kl = "c'est gagné en " + str(x - 1) + " tours"
@@ -243,6 +245,15 @@ def surface():
                             surface()
                     if event.type == pygame.QUIT:
                         exit()
+        elif res[0] + res[1] >= 1 and len(listecouleurs)==5 :
+            None
+        elif res[0] + res[1] >= 1:
+            for x in range(res[0] + res[1]):
+                listecouleurs.append(essai[0])
+            print(listecouleurs)
+
 
         pygame.display.update()
         babouin = False
+        time.sleep(0.5)
+surface()
