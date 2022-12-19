@@ -1,26 +1,42 @@
 import pygame
 import mm2
 import random
+TabCouleur = ['Noir','Blanc','Gris','Bleu','Rouge','Vert','Orange','Rose']
+'''gigachadlist = []
+dernièreliste = [0,0,0,0,0]
+def toutes_les_listes():
+    for x in TabCouleur:
+        for y in TabCouleur:
+            for i in TabCouleur:
+                for j in TabCouleur:
+                    for p in TabCouleur:
+                        gigachadlist.append((x,y,i,j,p))
+    return gigachadlist
+
+
+
+print(toutes_les_listes())'''
+
 def le_secret(TabCouleur):
     l=[]
     for i in range(5):
         l.append(mm2.TabCouleur[random.randint(0,7)])
     return l
-
+#on crée la liste qui servira de secret en tant que code dans le sens normal
 def defNoir(res,secret):
     babouin_compteur = 0
     for x in range (len(res)):
         if res[x] == secret[x]:
             babouin_compteur += 1
     return babouin_compteur
-
+#on compare la liste proposée au secret existant et on compte le nombre de pions identiques au meme endroit
 def babouinDoublon(prop):
     babouin_liste = []
     for babouin in prop:
         if babouin not in babouin_liste:
             babouin_liste.append(babouin)
     return babouin_liste
-
+#fonction qui retire les doublons d'une fonction
 def Blanc(prop,secret):
     n = defNoir(prop,secret)
     babouin_compteur = 0
@@ -30,9 +46,13 @@ def Blanc(prop,secret):
             if prop[x] == secret[y]:
                 babouin_compteur += 1
     return babouin_compteur-n
+
+#fonction qui compte le nombre de pions blancs entre un secret et une proposition
+#on regarde le nombre de pions si ils sont bien/mal placés et on soustrait aux pions noirs et les doublons
+#pour obtenir le nombre de pions blancs au total
 def babouin_con():
     return(mm2.TabCouleur[random.randint(0,7)])
-
+#la fonction qui renvoie en proposition une liste aléatoire de couleurs
 def babouin_big_cerveau(listecouleurs,couleursessai,précédents):
     #cas ou on a notre liste pleine donc toutes les couleurs déterminées
         babouin_try = [babouin_con()]
@@ -76,7 +96,6 @@ def surface():
     
     print(secret)
     intelligence = 1
-   
     listecouleurs = []
     couleursessai= []
     précédents = []
@@ -188,8 +207,7 @@ def surface():
         pygame.display.update()
         babouin = False
     
-                                
-
+surface()
                     
             
             
