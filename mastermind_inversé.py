@@ -198,7 +198,8 @@ def surface():
             couleursessai = total[2]
             précédents = total[3]
             mm2.afficherCombinaison(fenetre,essai, x)
-        elif intelligence == 3
+        elif intelligence == 3:
+            None
         '''babouin_infini = True
         while babouin_infini == True:
 
