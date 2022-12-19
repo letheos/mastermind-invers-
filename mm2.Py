@@ -3,7 +3,7 @@
 import pygame
 import random
 import math
-import mastermind_inversé
+
 #definition de variables globales
 Noir = (0,0,0)
 Blanc = (255,255,255)
