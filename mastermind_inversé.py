@@ -2,6 +2,8 @@ import pygame
 import mm2
 import random
 import time
+
+algo_3list =[]
 def shuffle_list(lst):
     # Créer une copie de la liste
     shuffled_list = lst.copy()
@@ -18,7 +20,7 @@ def shuffle_list(lst):
     return shuffled_list
 
 TabCouleur = ['Noir', 'Blanc', 'Gris', 'Bleu', 'Rouge', 'Vert', 'Orange', 'Rose']
-'''gigachadlist = []
+gigachadlist = []
 dernièreliste = [0,0,0,0,0]
 def toutes_les_listes():
     for x in TabCouleur:
@@ -31,7 +33,7 @@ def toutes_les_listes():
 
 
 
-print(toutes_les_listes())'''
+print(toutes_les_listes())
 # la liste qui contiendra toutes les couleurs supposées dans le code dans un ordre aléatoire
 la_base = []
 
@@ -104,6 +106,14 @@ def babouin_big_cerveau(listecouleurs, couleursessai, precedents):
             babouin_try.append(couleur)
         print(babouin_try)
         return[babouin_try,listecouleurs,couleursessai,precedents]
+
+
+def babouin_senku(algo_3list,optionnel = 1):
+    if optionnel == 1:
+        return ((0,0,0),(0,0,0),(0,0,0),(255,255,255),(255,255,255))
+    else:
+        essai = algo_3list[-1]
+        gigachadlist = [code for code in gigachadlist if sum([1 for i in range(len(mm2.TabCouleur)),if essai[i] == code[i]]) ==
 
 
 '''
@@ -199,7 +209,7 @@ def surface():
             précédents = total[3]
             mm2.afficherCombinaison(fenetre,essai, x)
         elif intelligence == 3:
-            None
+            return None
         '''babouin_infini = True
         while babouin_infini == True:
 
@@ -256,5 +266,5 @@ def surface():
 
         pygame.display.update()
         babouin = False
-        time.sleep(0.5)
+        time.sleep(0.3)
 surface()
