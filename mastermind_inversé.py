@@ -28,7 +28,7 @@ def toutes_les_listes():
             for i in mm2.TabCouleur:
                 for j in mm2.TabCouleur:
                     for p in mm2.TabCouleur:
-                        gigachadlist.append([x,y,i,j,p])
+                        gigachadlist.append((x,y,i,j,p))
     return gigachadlist
 
 
@@ -48,11 +48,12 @@ def le_secret(TabCouleur):
 # on crée la liste qui servira de secret en tant que code dans le sens normal
 def defNoir(res, secret):
     babouin_compteur = 0
-    for x in range(len(res)):
-        if res[x] == secret[x]:
+    x = 0
+    while x < len(res) and babouin_compteur < len(secret):
+        if res[x] == secret[babouin_compteur]:
             babouin_compteur += 1
+        x += 1
     return babouin_compteur
-
 
 # on compare la liste proposée au secret existant et on compte le nombre de pions identiques au meme endroit
 def babouinDoublon(prop):
@@ -90,9 +91,10 @@ def babouin_big_cerveau(listecouleurs, couleursessai, precedents):
     # precedents = les combinaisons aléatoires de listecouleurs qui n'ont pas marché
     # cas ou on a notre liste pleine donc toutes les couleurs déterminées
     if len(listecouleurs) == 5:
-        essai = shuffle_list(listecouleurs)
-        while essai in precedents:
-            essai = shuffle_list(listecouleurs)
+        essai = random.sample(listecouleurs, 5)
+        precedents_dict = {tuple(combo): None for combo in precedents}
+        while tuple(essai) in precedents_dict:
+            essai = random.sample(listecouleurs, 5)
         precedents.append(essai)
         print([essai,listecouleurs, couleursessai, precedents])
         return [essai,listecouleurs, couleursessai, precedents]
@@ -111,21 +113,29 @@ def babouin_big_cerveau(listecouleurs, couleursessai, precedents):
 
 def babouin_senku(secret,gigachadlist,algo_3list,res = [0,0],optionnel = 1):
     # res =[blancs,noirs]
+    gigachadlist = gigachadlist
     if optionnel == 0:
         return ((0,0,0),(0,0,0),(0,0,0),(255,255,255),(255,255,255))
         # Suppression des codes qui donneraient la même réponse que la tentative actuelle
+
     else:
+        print(len(gigachadlist))
         gigachadlist = [code for code in gigachadlist if [Blanc(algo_3list[-1], secret), defNoir(algo_3list[-1], secret)] != (res[0], res[1])]
+        print(len(gigachadlist))
         # Calcul du score de chaque code restant
-        scores = dict((liste, 0) for liste in gigachadlist)
-        print(scores)
+        scores = {}
+        for liste in gigachadlist:
+            scores[liste] = 0
+
+
         for code in gigachadlist:
             elimines = 0
             for reponse in gigachadlist:
-                if (Blanc(code, reponse), defNoir(code, reponse)) != (Blanc(algo_3list[-1],reponse),defNoir(algo_3list,reponse)):
+                if (Blanc(code, reponse), defNoir(code, reponse)) != (Blanc(algo_3list[-1],reponse),defNoir(algo_3list[-1],reponse)):
                     elimines += 1
             scores[code] = elimines
 
+        print(scores)
         # Sélection du code avec le meilleur score (ou un code aléatoire parmi ceux ayant le meilleur score)
         meilleur_score = min(scores.values())
         codes_meilleur_score = [code for code in scores if scores[code] == meilleur_score]
@@ -195,8 +205,27 @@ def babouin_senku(secret,gigachadlist,algo_3list,res = [0,0],optionnel = 1):
             #faut rajouter la couleur dans couleuressai dans le prog principal
 '''
 
+def winrate(intelligence,iterations):
+    résultats = 0
+    for x in range (iterations):
+        résultats = résultats + surface(intelligence,1,le_secret(mm2.TabCouleur))
+    print("nombe de victoires de l'ia", intelligence, ":", (résultats/iterations)*100)
 
-def surface():
+    nom_fichier = ("tests"+str(intelligence))
+
+    #ouverture souhaité (par exemple "w" pour écriture ou "a" pour ajout) :
+
+    # Ouvrir le fichier en mode écriture
+    with open(nom_fichier, "a") as f:
+        # Écrire du texte dans le fichier
+        f.write("test ia numéro " + str(intelligence)+"\n")
+        now = time.localtime()
+        date_heure = time.strftime("%Y-%m-%d %H:%M:%S", now)
+        f.write("test réalisé à " + str(date_heure) +"avec "+str(iterations)+" itérations\n")
+        f.write("pourcentage de victoire de l'ia :" + str((résultats/iterations)*100)+"\n")
+        f.write("\n")
+    return résultats
+def surface(intelligence = 1,modetest = 0,babouin_secret = 0):
     pygame.init()
     secret = le_secret(mm2.TabCouleur)
     fenetre = pygame.display.set_mode([800, 800])
@@ -204,18 +233,13 @@ def surface():
     mm2.afficherPlateau(fenetre)
     mm2.afficherChoixCouleur(fenetre)
     pygame.display.update()
-    myfont = pygame.font.SysFont("monospace", 20)
-    babouin_constructeur = myfont.render("n = valider bien placé", 1, mm2.Noir)
-    babouin_constructeur2 = myfont.render("b = valider mal placé", 1, mm2.Noir)
-    babouin_validation = myfont.render("v pour valider les pions actuels", 1, mm2.Noir)
-    fenetre.blit(babouin_constructeur, [5, 5])
-    fenetre.blit(babouin_constructeur2, [5, 25])
-    fenetre.blit(babouin_validation, [5, 40])
-    pygame.display.update()
-    secret = mm2.construireProposition(fenetre, 0.5)
 
+    if modetest == 0:
+        secret = mm2.construireProposition(fenetre, 0.5)
+    elif modetest == 1:
+        secret = le_secret(mm2.TabCouleur)
+        mm2.afficherSecret(fenetre,secret)
 
-    intelligence = 2
     listecouleurs = []
     couleursessai = []
     précédents = []
@@ -227,6 +251,7 @@ def surface():
     for x in range(2, 18):
         res = [0, 0]
         if x > 16:
+
             myfont = pygame.font.SysFont("monospace", 40)
 
             if intelligence == 0:
@@ -246,7 +271,8 @@ def surface():
 
             fenetre.blit(babouin_quitter, [75, 690])
             pygame.display.update()
-
+            if modetest == 1:
+                return 0
             while not babouin:
                 for event in pygame.event.get():
                     if event.type == pygame.KEYDOWN:
@@ -257,7 +283,7 @@ def surface():
                     if event.type == pygame.QUIT:
                         exit()
 
-        if intelligence == 0:
+        elif intelligence == 0:
             essai = [mm2.TabCouleur[random.randint(0, 7)] for x in range(5)]
             mm2.afficherCombinaison(fenetre, essai, x)
         elif intelligence == 1:
@@ -306,6 +332,7 @@ def surface():
         mm2.afficherResultat(fenetre, res, x)
         pygame.display.update()
         if res[1] == 5:
+
             myfont = pygame.font.SysFont("monospace", 40)
             kl = "c'est gagné en " + str(x - 1) + " tours"
 
@@ -318,6 +345,8 @@ def surface():
             fenetre.blit(babouin_quitter, [75, 690])
             pygame.display.update()
             babouin = False
+            if modetest ==1:
+                return 1
             while not babouin:
 
                 for event in pygame.event.get():
@@ -336,8 +365,9 @@ def surface():
         print("listecouleurs;",listecouleurs)
         print("longueur gigachadlist:",len(gigachadlist))
 
-
+        if modetest == 0:
+            time.sleep(0.3)
         pygame.display.update()
         babouin = False
-        time.sleep(0.3)
-surface()
+
+winrate(0,100)
