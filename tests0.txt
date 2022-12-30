@@ -46,3 +46,123 @@ test ia numéro 0
 test réalisé à 2022-12-29 15:16:53avec 100 itérations
 pourcentage de victoire de l'ia :0.0
 
+test ia numéro 0
+test réalisé à 2022-12-30 13:01:33avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:01:45avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:01:56avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:02:07avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:02:19avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:02:30avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:02:42avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:02:53avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:03:04avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:03:16avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:03:27avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:03:38avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:03:49avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:04:01avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:04:12avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:04:24avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:04:35avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:04:47avec 100 itérations
+pourcentage de victoire de l'ia :1.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:04:58avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:05:09avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:05:21avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:05:33avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:05:44avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:05:56avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:06:08avec 100 itérations
+pourcentage de victoire de l'ia :1.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:06:20avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:06:33avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:06:44avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:06:56avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
+test ia numéro 0
+test réalisé à 2022-12-30 13:07:09avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
