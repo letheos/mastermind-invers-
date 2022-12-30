@@ -113,27 +113,35 @@ def babouin_big_cerveau(listecouleurs, couleursessai, precedents):
 
 def babouin_senku(secret,gigachadlist,algo_3list,res = [0,0],optionnel = 1):
     # res =[blancs,noirs]
-    gigachadlist = gigachadlist
     if optionnel == 0:
         return ((0,0,0),(0,0,0),(0,0,0),(255,255,255),(255,255,255))
-        # Suppression des codes qui donneraient la même réponse que la tentative actuelle
+
 
     else:
+        gigachadlist2 = []
         print(len(gigachadlist))
-        gigachadlist = [code for code in gigachadlist if [Blanc(algo_3list[-1], secret), defNoir(algo_3list[-1], secret)] != (res[0], res[1])]
+        print(len(gigachadlist2))
+        # Suppression des essais qui donneraient la même réponse que la tentative actuelle
+        for x in range (len(gigachadlist)):
+            if Blanc(gigachadlist[x],secret) != res[0] or defNoir(gigachadlist[x],secret) != res[1]:
+                gigachadlist2.append(gigachadlist[x])
+
         print(len(gigachadlist))
+        print(len(gigachadlist2))
+        #gigachadlist = [code for code in gigachadlist if [Blanc(algo_3list[-1], secret), defNoir(algo_3list[-1], secret)] != (res[0], res[1])]
+
         # Calcul du score de chaque code restant
         scores = {}
-        for liste in gigachadlist:
+
+        for liste in gigachadlist2:
             scores[liste] = 0
-
-
-        for code in gigachadlist:
+        for x in range (len(gigachadlist2)):
             elimines = 0
-            for reponse in gigachadlist:
-                if (Blanc(code, reponse), defNoir(code, reponse)) != (Blanc(algo_3list[-1],reponse),defNoir(algo_3list[-1],reponse)):
+            for y in range (len(gigachadlist2)):
+                if (Blanc(gigachadlist2[x], gigachadlist2[y]) != Blanc(algo_3list[-1],gigachadlist2[y]) or defNoir(gigachadlist2[x],gigachadlist2[y]) != defNoir(algo_3list[-1],gigachadlist2[y])):
                     elimines += 1
-            scores[code] = elimines
+            scores[x] = elimines
+
 
         print(scores)
         # Sélection du code avec le meilleur score (ou un code aléatoire parmi ceux ayant le meilleur score)
@@ -206,17 +214,22 @@ def babouin_senku(secret,gigachadlist,algo_3list,res = [0,0],optionnel = 1):
 '''
 
 def winrate(intelligence,iterations):
+    start = time.perf_counter()
+    if intelligence != 1 and  intelligence !=2 and intelligence != 0:
+        return None
     résultats = 0
+
     for x in range (iterations):
         résultats = résultats + surface(intelligence,1,le_secret(mm2.TabCouleur))
     print("nombe de victoires de l'ia", intelligence, ":", (résultats/iterations)*100)
-
+    end = time.perf_counter()
+    print("temps d'exécution : "+str(end - start))
     nom_fichier = ("tests"+str(intelligence))
 
     #ouverture souhaité (par exemple "w" pour écriture ou "a" pour ajout) :
 
     # Ouvrir le fichier en mode écriture
-    with open(nom_fichier, "a") as f:
+    with open(nom_fichier+".txt", "a") as f:
         # Écrire du texte dans le fichier
         f.write("test ia numéro " + str(intelligence)+"\n")
         now = time.localtime()
@@ -225,6 +238,50 @@ def winrate(intelligence,iterations):
         f.write("pourcentage de victoire de l'ia :" + str((résultats/iterations)*100)+"\n")
         f.write("\n")
     return résultats
+
+
+def moyenne(winrates):
+    total = 0
+    for x in range(len(winrates)):
+        total += winrates[x]
+    res = total /len(winrates)
+    print(res)
+    return (res)
+
+
+def recuperation(intelligence):
+    nomfichier = ("tests"+str(intelligence)+".txt")
+# Ouvrir le fichier en mode lecture
+    with open(nomfichier, "r") as f:
+        # Lire toutes les lignes du fichier en une liste
+        lines = f.readlines()
+
+    # Initialiser une liste vide pour stocker les taux de victoires
+    winrates = []
+    mean_winrate = 0
+    # Parcourir chaque ligne du fichier
+    for line in lines:
+        if line.startswith("pourcentage de victoire de l'ia :"):
+        # Séparer la ligne en différentes parties en utilisant une chaîne vide comme séparateur
+            parts = line.split(" ")
+            # Récupérer la partie du texte qui contient le taux de victoire
+            winrate = parts[-1]
+            # Convertir le taux de victoire en un nombre flottant
+            winrate = winrate.replace(":", "")
+            winrate = winrate.replace("\n","")
+            # Convertir le taux de victoire en un nombre flottant
+            winrate = float(winrate)
+            winrate = float(winrate)
+            # Ajouter letaux de victoire a winrates
+            winrates.append(winrate)
+
+    oui = moyenne(winrates)
+    #Afficher la moyenne des taux de victoires
+
+    print("Moyenne des taux de victoires :" + str(oui))
+
+
+
 def surface(intelligence = 1,modetest = 0,babouin_secret = 0):
     pygame.init()
     secret = le_secret(mm2.TabCouleur)
@@ -370,4 +427,5 @@ def surface(intelligence = 1,modetest = 0,babouin_secret = 0):
         pygame.display.update()
         babouin = False
 
-winrate(0,100)
+surface(2)
+
