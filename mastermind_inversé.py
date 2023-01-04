@@ -37,7 +37,15 @@ def toutes_les_listes():
 # la liste qui contiendra toutes les couleurs supposées dans le code dans un ordre aléatoire
 la_base = []
 
-
+def code_couleurs(listecouleurs):
+    gigachadlist = []
+    for x in listecouleurs:
+        for y in listecouleurs:
+            for i in listecouleurs:
+                for j in listecouleurs:
+                    for p in listecouleurs:
+                        gigachadlist.append((x,y,i,j,p))
+    return gigachadlist
 def le_secret(TabCouleur):
     l = []
     for i in range(5):
@@ -46,14 +54,14 @@ def le_secret(TabCouleur):
 
 
 # on crée la liste qui servira de secret en tant que code dans le sens normal
-def defNoir(res, secret):
+
+def defNoir(res,secret):
     babouin_compteur = 0
-    x = 0
-    while x < len(res) and babouin_compteur < len(secret):
-        if res[x] == secret[babouin_compteur]:
+    for x in range (len(res)):
+        if res[x] == secret[x]:
             babouin_compteur += 1
-        x += 1
     return babouin_compteur
+
 
 # on compare la liste proposée au secret existant et on compte le nombre de pions identiques au meme endroit
 def babouinDoublon(prop):
@@ -96,8 +104,7 @@ def babouin_big_cerveau(listecouleurs, couleursessai, precedents):
         while tuple(essai) in precedents_dict:
             essai = random.sample(listecouleurs, 5)
         precedents.append(essai)
-        print([essai,listecouleurs, couleursessai, precedents])
-        return [essai,listecouleurs, couleursessai, precedents]
+        return [essai, listecouleurs, couleursessai, precedents]
     else:
         babouin_try = []
         couleur = mm2.TabCouleur[random.randint(0, 7)]
@@ -111,44 +118,52 @@ def babouin_big_cerveau(listecouleurs, couleursessai, precedents):
 
 
 
-def babouin_senku(secret,gigachadlist,algo_3list,res = [0,0],optionnel = 1):
+def babouin_senku(secret,gigachadlist,algo_3list,res = [0,0]):
+
     # res =[blancs,noirs]
-    if optionnel == 0:
-        return ((0,0,0),(0,0,0),(0,0,0),(255,255,255),(255,255,255))
+    if len(algo_3list) == 0:
+        babouin_aléatoire = random.randint(0,len(gigachadlist))
+        essai = gigachadlist[babouin_aléatoire]
+        return [essai,gigachadlist]
+    print("gigachad list",len(gigachadlist))
+
+    # Suppression des essais qui donneraient la même réponse que la tentative actuelle
+    gigachadlist2 = []
+    for x in range (len(gigachadlist)):
+        pygame.display.update()
+
+        if Blanc(gigachadlist[x],secret) != res[0] or defNoir(gigachadlist[x],secret) != res[1]:
+            gigachadlist2.append(gigachadlist[x])
+
+    print("gigachad list",len(gigachadlist))
+    print("gigachad list2",len(gigachadlist2))
+
+    #gigachadlist = [code for code in gigachadlist if [Blanc(algo_3list[-1], secret), defNoir(algo_3list[-1], secret)] != (res[0], res[1])]
+
+    # Calcul du score de chaque code restant
+    scores = {}
+
+    for liste in gigachadlist2:
+        scores[liste] = 0
 
 
-    else:
-        gigachadlist2 = []
-        print(len(gigachadlist))
-        print(len(gigachadlist2))
-        # Suppression des essais qui donneraient la même réponse que la tentative actuelle
-        for x in range (len(gigachadlist)):
-            if Blanc(gigachadlist[x],secret) != res[0] or defNoir(gigachadlist[x],secret) != res[1]:
-                gigachadlist2.append(gigachadlist[x])
+    for x in gigachadlist2:
+        elimines = 0
 
-        print(len(gigachadlist))
-        print(len(gigachadlist2))
-        #gigachadlist = [code for code in gigachadlist if [Blanc(algo_3list[-1], secret), defNoir(algo_3list[-1], secret)] != (res[0], res[1])]
-
-        # Calcul du score de chaque code restant
-        scores = {}
-
-        for liste in gigachadlist2:
-            scores[liste] = 0
-        for x in range (len(gigachadlist2)):
-            elimines = 0
-            for y in range (len(gigachadlist2)):
-                if (Blanc(gigachadlist2[x], gigachadlist2[y]) != Blanc(algo_3list[-1],gigachadlist2[y]) or defNoir(gigachadlist2[x],gigachadlist2[y]) != defNoir(algo_3list[-1],gigachadlist2[y])):
-                    elimines += 1
-            scores[x] = elimines
+        for y in gigachadlist2:
+            if (Blanc(x,y) != Blanc(algo_3list[-1],y) or defNoir(x,y) != defNoir(algo_3list[-1],y)):
+                elimines += 1
+        scores[x] = elimines
 
 
-        print(scores)
-        # Sélection du code avec le meilleur score (ou un code aléatoire parmi ceux ayant le meilleur score)
-        meilleur_score = min(scores.values())
-        codes_meilleur_score = [code for code in scores if scores[code] == meilleur_score]
-        essai  = random.choice(codes_meilleur_score)
-        return essai
+
+    # Sélection du code avec le meilleur score (ou un code aléatoire parmi ceux ayant le meilleur score)
+    meilleur_score = min(scores.values())
+    codes_meilleur_score = [code for code in scores if scores[code] == meilleur_score]
+    essai = random.choice(codes_meilleur_score)
+
+
+    return [essai,gigachadlist2]
 '''else:
 
         essai = algo_3list[-1]
@@ -301,9 +316,8 @@ def surface(intelligence = 1,modetest = 0,babouin_secret = 0):
     couleursessai = []
     précédents = []
     algo_3list = []
+    marque = 0
     gigachadlist = toutes_les_listes()
-    print("longueur gigachadlist:",
-    len(gigachadlist))
 
     for x in range(2, 18):
         res = [0, 0]
@@ -319,8 +333,7 @@ def surface(intelligence = 1,modetest = 0,babouin_secret = 0):
             elif intelligence == 2:
                 lab = myfont.render("l'ia folle a perdu",1,mm2.Noir)
             fenetre.blit(lab, [150, 750])
-            print(gigachadlist)
-            print(len(gigachadlist))
+
             myfont = pygame.font.SysFont("monospace", 20)
             babouin_redemarrer = myfont.render("espace pour redémarrer", 1, mm2.Noir)
             fenetre.blit(babouin_redemarrer, [75, 670])
@@ -336,7 +349,7 @@ def surface(intelligence = 1,modetest = 0,babouin_secret = 0):
                         if event.key == pygame.K_ESCAPE:
                             exit()
                         if event.key == pygame.K_SPACE:
-                            surface()
+                            surface(intelligence)
                     if event.type == pygame.QUIT:
                         exit()
 
@@ -347,7 +360,8 @@ def surface(intelligence = 1,modetest = 0,babouin_secret = 0):
             # listecouleurs = liste des couleurs definies dans le secret
             # couleuressai = les couleurs précédentes essayées
             # précédents = les anciens essais
-            print((listecouleurs, couleursessai, précédents))
+
+
             total = babouin_big_cerveau(listecouleurs, couleursessai, précédents)
             essai = total[0]
             listecouleurs = total[1]
@@ -355,13 +369,30 @@ def surface(intelligence = 1,modetest = 0,babouin_secret = 0):
             précédents = total[3]
             mm2.afficherCombinaison(fenetre,essai, x)
         elif intelligence == 2:
-            if x == 2 :
-                essai = babouin_senku(secret,gigachadlist,algo_3list,[0,0],0)
-            else:
-                essai = babouin_senku(secret,gigachadlist,algo_3list,res)
+            if len(listecouleurs) != 5 :
+                total = babouin_big_cerveau(listecouleurs, couleursessai, précédents)
+                essai = total[0]
+                listecouleurs = total[1]
+                couleursessai = total[2]
+                précédents = total[3]
+                print("listecouleur",listecouleurs)
+                print(len(listecouleurs))
 
-            print("l'essai a la sortie de intelligence 3",essai)
-            algo_3list.append(essai)
+            if len(listecouleurs) == 5 and marque == 0:
+                print("ceci est la liste couleur ta mère la pute:",listecouleurs)
+                gigachadlist = code_couleurs(listecouleurs)
+                print("longueur de la gigachadlist =",len(gigachadlist))
+                marque = 1
+            if len(listecouleurs) == 5 and marque == 1:
+                print("on a passé le if len(listecouleurs) == 5 and marque == 1:",len(gigachadlist))
+                total = babouin_senku(secret, gigachadlist, algo_3list)
+                essai = total[0]
+                gigachadlist = total[1]
+                algo_3list.append(essai)
+
+
+
+
 
             mm2.afficherCombinaison(fenetre, essai, x)
 
@@ -411,7 +442,7 @@ def surface(intelligence = 1,modetest = 0,babouin_secret = 0):
                         if event.key == pygame.K_ESCAPE:
                             exit()
                         if event.key == pygame.K_SPACE:
-                            surface()
+                            surface(intelligence)
                     if event.type == pygame.QUIT:
                         exit()
         elif res[0] + res[1] >= 1 and len(listecouleurs)==5 :
@@ -419,13 +450,12 @@ def surface(intelligence = 1,modetest = 0,babouin_secret = 0):
         elif res[0] + res[1] >= 1:
             for x in range(res[0] + res[1]):
                 listecouleurs.append(essai[0])
-        print("listecouleurs;",listecouleurs)
-        print("longueur gigachadlist:",len(gigachadlist))
+
 
         if modetest == 0:
             time.sleep(0.3)
         pygame.display.update()
         babouin = False
 
-surface(2)
 
+surface(0)

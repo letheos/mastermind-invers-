@@ -430,3 +430,23 @@ test ia numéro 1
 test réalisé à 2022-12-29 16:33:20avec 100 itérations
 pourcentage de victoire de l'ia :12.0
 
+test ia numéro 1
+test réalisé à 2023-01-01 16:16:06avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-01 16:19:01avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-02 14:32:38avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-03 10:08:41avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-03 10:11:23avec 1000 itérations
+pourcentage de victoire de l'ia :20.8
+
