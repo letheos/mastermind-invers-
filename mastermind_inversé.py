@@ -99,6 +99,8 @@ def defNoir(res, secret):
     babouin_compteur: int
     res: list
     secret: list
+    print("essai",res)
+    print("secret donné a noir",secret)
     for x in range(len(res)):
         if res[x] == secret[x]:
             babouin_compteur += 1
@@ -253,14 +255,21 @@ def babouin_filtre_final(alphachadlist,algo3liste,algo3res):
     betachadlist = []
     babouin = 0
     while babouin < len(alphachadlist):
-        if algo3res[-1] == [Blanc(alphachadlist,algo3liste[-1]),defNoir(alphachadlist,algo3liste[-1])]:
+        if algo3res[-1] == [Blanc2(alphachadlist[babouin],algo3liste[-1]),defNoir(alphachadlist[babouin],algo3liste[-1])]:
             betachadlist.append(alphachadlist[babouin])
             babouin +=1
         else:
             babouin += 1
     return betachadlist
 
-def
+def babouin_fou(algo3liste,algo3res,gigachadlist):
+    if len(algo3liste) == 0:
+        essai = [babouin_con() for x in range(5)]
+        return [essai,gigachadlist]
+    else:
+        gigachadlist = babouin_filtre_final(gigachadlist,algo3liste,algo3res)
+        essai = gigachadlist[0]
+        return [essai,gigachadlist]
 
 # cette fonction est une fonction de substitution car sa première version ne fonctionnait pas
 def babouin_folie2(algo3codes, algo3res, gigachadlist, tour):
@@ -772,11 +781,12 @@ def surface(intelligence=1, modetest=0, babouin_secret=0):
     listecouleurs = []
     couleursessai = []
     précédents = []
-    algo_3list = []
+    algo3list = []
     marque = 0
     algo3codes = []
     algo3res = []
-    gigachadlist = toutes_les_listes()
+    if  intelligence ==2:
+        gigachadlist = toutes_les_listes()
 
     for x in range(2, 18):
         res = [0, 0]
@@ -828,16 +838,16 @@ def surface(intelligence=1, modetest=0, babouin_secret=0):
             mm2.afficherCombinaison(fenetre, essai, x)
 
         elif intelligence == 2:
-            total = babouin_folie(algo3codes, algo3res, gigachadlist, x)
+            total = babouin_fou(algo3list,algo3res,gigachadlist)
             essai = total[0]
             gigachadlist = total[1]
-            algo3codes.append(essai)
-            print(essai)
-            print("secret", secret)
-
+            algo3list.append(essai)
+            print("essai:",essai)
+            print("longueur gigachadlist:",len(gigachadlist))
+            print(secret)
         mm2.afficherCombinaison(fenetre, essai, x)
 
-        a = Blanc(essai, secret)
+        a = Blanc2(essai, secret)
         res = [a, defNoir(essai, secret)]
         mm2.afficherResultat(fenetre, res, x)
         pygame.display.update()
@@ -1006,3 +1016,5 @@ fonction surface(intelligence=1, modetest=0, babouin_secret=0):
         pygame.display.update()
         babouin = False
 '''
+for x in range (100):
+    winrate(2,100)

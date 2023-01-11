@@ -574,3 +574,7 @@ test ia numéro 0
 test réalisé à 2023-01-10 10:15:10avec 100 itérations
 pourcentage de victoire de l'ia :0.0
 
+test ia numéro 0
+test réalisé à 2023-01-11 18:25:56avec 1000 itérations
+pourcentage de victoire de l'ia :0.0
+
