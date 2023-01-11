@@ -566,3 +566,11 @@ test ia numéro 0
 test réalisé à 2022-12-30 22:41:10avec 100 itérations
 pourcentage de victoire de l'ia :0.0
 
+test ia numéro 0
+test réalisé à 2023-01-10 10:08:27avec 10000 itérations
+pourcentage de victoire de l'ia :0.05
+
+test ia numéro 0
+test réalisé à 2023-01-10 10:15:10avec 100 itérations
+pourcentage de victoire de l'ia :0.0
+
