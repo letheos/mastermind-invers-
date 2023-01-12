@@ -125,7 +125,7 @@ def game():
                             credits_window = tk.Tk()
                             credits_window.title("Crédits")
                             credits_text = tk.Label(credits_window,
-                                                    text="Concepteur :\nTheo Parrent\nTheo Duterte--Richardot\nLoick Mornaux\nDroit de conception squirrel monkey corp",
+                                                    text="Concepteur :\nTheo Parent\nTheo Duterte--Richardot\nLoick Mornaux\nDroit de conception squirrel monkey corp",
                                                     font=("Arial", 16))
                             credits_text.pack()
                             credits_window.mainloop()

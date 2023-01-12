@@ -12,7 +12,7 @@ import copy
 # dans nos délais les plus brefs
 # membres de la squirrelMonkey corp:
 # président :Theo parent
-# salariés:Theo Dutertre-Richardot ,Loïck Morneau
+# salariés:Theo Duterte--Richardot ,Loïck Morneau
 # si vous constatez la présence de babouins dans notre codes ceci est tout a fait normal et ne dois pas etre considéré comme une erreur ou
 # une quelconque trace de folie mais comme une signature de notre entreprise pour prouver son unicité dans le monde de la programmaion
 # tout les pseudo codes seront écrit en commentaires en dessous de leur fonction correspondante
@@ -229,8 +229,7 @@ def babouin_big_cerveau(listecouleurs, couleursessai, precedents):
         babouin_try = []
         couleur = mm2.TabCouleur[random.randint(0, 7)]  # on génère une combinaison aléatoire à partir de mm2.tabcouleur
         while couleur in couleursessai:
-            couleur = mm2.TabCouleur[random.randint(0,
-                                                    7)]  # si on a déja essayé des couleurs on change jusqu'a avoir une couleur que l'on a pas encore essayé
+            couleur = mm2.TabCouleur[random.randint(0,7)]  # si on a déja essayé des couleurs on change jusqu'a avoir une couleur que l'on a pas encore essayé
         couleursessai.append(couleur)
         for babouin_folie in range(5):
             babouin_try.append(couleur)  # on génère une liste de 5fois la couleur que l'on a selectionné précedemment
@@ -784,8 +783,7 @@ def recuperation(intelligence):
         lines = f.readlines()  # on lit toutes les lignes du texte
     winrates = []
     for line in lines:
-        if line.startswith(
-                "pourcentage de victoire de l'ia :"):  # on récupère toutes les listes qui commencent par la phrase "pourcentage de victoire de l'ia :
+        if line.startswith("pourcentage de victoire de l'ia :"):  # on récupère toutes les listes qui commencent par la phrase "pourcentage de victoire de l'ia :
             parts = line.split(" ")  # on sépare toutes les informations du texte
             winrate = parts[
                 -1]  # on récupère la fin du texte splitté , dans notre cas on aura quelquechose sous cette forme ":(taux de victoire)\n"
@@ -799,8 +797,7 @@ def recuperation(intelligence):
 
     oui = moyenne(winrates)
 
-    print("Moyenne des taux de victoires :" + str(
-        oui))  # on affiche  la moyenne des taux de victoire calculés dans la fonction d'au dessus
+    print("Moyenne des taux de victoires de l'ia ",intelligence,":" + str(oui))  # on affiche  la moyenne des taux de victoire calculés dans la fonction d'au dessus
 
 
 # complexitée 0(n) car on ne fait qu'une boucle qui parcours un fichier de la même manière qu'une liste
@@ -945,7 +942,7 @@ def surface(intelligence=1, modetest=0, babouin_secret=0, essai_max=18):
                             pygame.quit()
                             subprocess.run(["python", "interface_IA_normal.py"])
                         if event.key == pygame.K_SPACE:
-                            exit()
+                            surface(intelligence)
                     if event.type == pygame.QUIT:
                         exit()
         elif res[0] + res[1] >= 1 and len(listecouleurs) == 5:
@@ -1238,5 +1235,3 @@ fonction recuperation_iterations(intelligence):
     afficher("moyenne du nombre d'essais nécéssaires pour que l'ia ",intelligence,"gagne:",moyenne_essais)
     afficher("moyenne du temps de nécéssaire pour que l'ia ",intelligence,"gagne ",moyenne_temps)
 '''
-
-recuperation_iterations(0)
