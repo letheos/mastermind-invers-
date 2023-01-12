@@ -4,7 +4,6 @@ import random
 import time
 import copy
 
-
 # ce code est la propriéte de la SquirrelMonkeyCorp© et a pour but de concrétiser un projet de cours
 # pour le moindre problème veuillez nous contacter a l'adresse mail suivante: squirrelmonkeycorp@gmail.com votre demande sera prise en charge
 # dans nos délais les plus brefs
@@ -28,16 +27,14 @@ def shuffle_list(liste):
 
 '''
 fonction "shuffle_list" (liste) :
-     babouin_liste = liste.copy()
+     babouin_liste <- liste.copy()
      babouin_liste : list
      pour chaque i dans la longueur de (longueur (babouin_liste)):
-        random_index = chiffre aléatoire allant de  (0, longueur de (babouin_liste)-1)
-        babouin_liste[i], babouin_liste[random_index] = babouin_liste[random_index], babouin_liste[i]
+        random_index <- chiffre aléatoire allant de  (0, longueur de (babouin_liste)-1)
+        babouin_liste[i], babouin_liste[random_index] <- babouin_liste[random_index], babouin_liste[i]
     renvoyer babouin_liste
 fin de la fonction
 '''
-
-dernièreliste = [0, 0, 0, 0, 0]
 
 
 # une fonction qui permet de générer toutes le combinaisons possibles de couleurs
@@ -57,7 +54,7 @@ def toutes_les_listes():
 
 '''
 fonction"toutes les listes():
-    gigachadlist = []
+    gigachadlist <- []
     #on fait 5boucles imbriquées pour a chaque fois modifier une combinaison élément par élément et ainsi obtenir toutes les possibilitées de couleurs
     pour chaque x dans  mm2.TabCouleur:
         pour chaque y dans mm2.TabCouleur:
@@ -83,7 +80,7 @@ def le_secret(TabCouleur):
 # on crée la liste qui servira de secret en tant que code dans le sens normal
 '''
 fonction le_secret(TabCouleur):
-    l = []
+    l <- []
     l : list
     TabCouleur : list
     #on crée une boucle qui va faire apprendre a une liste un identifiant rvb aléatoire de la liste des couleurs disponibles au jeu
@@ -93,14 +90,12 @@ fonction le_secret(TabCouleur):
 '''
 
 
-# la fonction qui sert a compter le nombre de pions communs au bon emplacement entre l'essai et le secret
+# la fonction qui sert à compter le nombre de pions communs au bon emplacement entre l'essai et le secret
 def defNoir(res, secret):
     babouin_compteur = 0
     babouin_compteur: int
     res: list
     secret: list
-    print("essai",res)
-    print("secret donné a noir",secret)
     for x in range(len(res)):
         if res[x] == secret[x]:
             babouin_compteur += 1
@@ -110,7 +105,7 @@ def defNoir(res, secret):
 
 '''
 fonction defNoir(res,secret):
-    babouin_compteur = 0
+    babouin_compteur <- 0
     babouin_compteur : int
     res : list
     secret : list
@@ -133,7 +128,7 @@ def babouinDoublon(prop):
 #complexité 0(n) car on ne parcours qu'une seule boucle for
 '''
 fonction babouinDoublon(prop):
-    babouin_liste = []
+    babouin_liste <- []
     pour chaque babouin dans prop:
         si babouin n'est pas dans babouin_liste:
             ajouter a babouin_liste(babouin)
@@ -147,6 +142,9 @@ fonction babouinDoublon(prop):
 def Blanc(prop, secret):
     n = defNoir(prop, secret)
     babouin_compteur = 0
+    prop : list
+    secret :list
+
     prop = babouinDoublon(prop)
     for x in range(len(prop)):
         for y in range(len(secret)):
@@ -157,9 +155,9 @@ def Blanc(prop, secret):
 
 '''
 fonction Blanc(prop, secret):
-    n = fonction defNoir(prop, secret)
-    babouin_compteur = 0
-    prop = babouinDoublon(prop)
+    n <- fonction defNoir(prop, secret)
+    babouin_compteur <- 0
+    prop <- babouinDoublon(prop)
     pour chaque x allant de 0 à longueur (prop):
         pour chaque y allant de 0 à (longueur de secret):
             si  prop[x] équivaut à secret[y]:
@@ -221,29 +219,29 @@ def babouin_big_cerveau(listecouleurs, couleursessai, precedents):
         couleursessai.append(couleur)
         for babouin_folie in range(5):
             babouin_try.append(couleur)  # on génère une liste de 5fois la couleur que l'on a selectionné précedemment
-        print(babouin_try)
+
         return [babouin_try, listecouleurs, couleursessai, precedents]
 
 #la fonctio babouin_big_cerveau est 0(n) car nous utilisons une seule boucle et non pas des boucles imbriquées
 #de plus comme pour toutes les autres de complexité 0(n) elle dépend de la longueur de la liste avec laquelle elle intéragit
 '''
 def babouin_big_cerveau(listecouleurs, couleursessai, precedents):
-    # listecouleurs = la liste des couleurs qui on suppose composent notre code
-    # couleursessai = les couleurs par paquet de 4 que nous avons déja essayé de faire
-    # precedents = les combinaisons aléatoires de listecouleurs qui n'ont pas marché
+    # listecouleurs <- la liste des couleurs qui on suppose composent notre code
+    # couleursessai <- les couleurs par paquet de 4 que nous avons déja essayé de faire
+    # precedents <- les combinaisons aléatoires de listecouleurs qui n'ont pas marché
     # cas ou on a notre liste pleine donc toutes les couleurs déterminées
     si la longueur de la liste des couleurs est égale à 5:
-        essai = combinaison aléatoire dans listecouleurs de longueur 5
-        precedents_dict = {tuple(combo): None for combo in precedents}
+        essai <- combinaison aléatoire dans listecouleurs de longueur 5
+        precedents_dict <- {tuple(combo): None for combo in precedents}
         tant que tuple(essai) est dans precedents_dict:
-            essai = combinaison aléatoire dans listecouleurs de longueur 5
+            essai <- combinaison aléatoire dans listecouleurs de longueur 5
         ajouter a precedents(essai)
         renvoyer [essai, listecouleurs, couleursessai, precedents]
     else:
-        babouin_try = []
-        couleur = mm2.TabCouleur[nombre aléatoire entre 0 et 7]
+        babouin_try <- []
+        couleur <- mm2.TabCouleur[nombre aléatoire entre 0 et 7]
         tant qu'il y'a couleur dans couleursessai:
-            couleur = mm2.TabCouleur[nombre aléatoire entre 0 et 7]
+            couleur <- mm2.TabCouleur[nombre aléatoire entre 0 et 7]
         ajouter à couleursessai(essai)
         pour chaque babouin allant de 0 à 5
             ajouter a babouin_couleurs (couleur)
@@ -254,6 +252,11 @@ def babouin_big_cerveau(listecouleurs, couleursessai, precedents):
 def babouin_filtre_final(alphachadlist,algo3liste,algo3res):
     betachadlist = []
     babouin = 0
+    betachadlist:list
+    alphachadlist:list
+    babouin:int
+    algo3res:list
+    algo3liste:list
     while babouin < len(alphachadlist):
         if algo3res[-1] == [Blanc2(alphachadlist[babouin],algo3liste[-1]),defNoir(alphachadlist[babouin],algo3liste[-1])]:
             betachadlist.append(alphachadlist[babouin])
@@ -638,23 +641,22 @@ def babouin_folie(algo3codes, algo3res, gigachadlist, tour):
 # en second temps la fonction crée/ouvre un fichier nommé test(numéro de l'ia) puis ajoute toutes les informations nécéssaires a un test , nottament la date de la réalisation
 # le numéro de l'ia ,mais aussi le nombre d'itérations faites et le pourcentage de victoire de l'ia
 def winrate(intelligence, iterations):
+    intelligence:int
+    iterations:int
     start = time.perf_counter()
     if intelligence != 1 and intelligence != 2 and intelligence != 0:  # on vérifie si l'ia rentrée n'est pas une ia incorrecte
         return None
     résultats = 0
 
-    for x in range(
-            iterations):  # on additionne tout les résultats de notre ia pour povoir calculer le pourcentage de victoire
+    for x in range(iterations):  # on additionne tout les résultats de notre ia pour povoir calculer le pourcentage de victoire
         résultats = résultats + surface(intelligence, 1, le_secret(mm2.TabCouleur))
-    print("nombe de victoires de l'ia en %", intelligence, ":", (
-            résultats / iterations) * 100)  # on print le pourcentage de victoire de notre ia sur le nombre d'itérations données
+    print("nombe de victoires de l'ia en %", intelligence, ":", (résultats / iterations) * 100)  # on print le pourcentage de victoire de notre ia sur le nombre d'itérations données
     end = time.perf_counter()
     print("temps d'exécution : " + str(end - start))  # on affiche le temps d'exécution de nos itérations
     nom_fichier = ("tests" + str(intelligence))  # on détermine selon le numéro de l'ia un fichier a créer
 
     # Ouvrir le fichier en mode écriture
-    with open(nom_fichier + ".txt",
-              "a") as f:  # on ouvre en mode ajout notre fichier qui correspond a notre numéro d'ia
+    with open(nom_fichier + ".txt","a") as f:  # on ouvre en mode ajout notre fichier qui correspond a notre numéro d'ia
         # Écrire du texte dans le fichier
         f.write("test ia numéro " + str(intelligence) + "\n")  # on écrit dans le fichier les lignes
         now = time.localtime()
@@ -670,21 +672,21 @@ def winrate(intelligence, iterations):
 #la complexité de cette fonction est de 0(n*itérations) car nous allons effectuer "itérations" fois les calculs
 '''
 fonction winrate(intelligence,iterations):
-    start = time.perf_counter()
+    start <- time.perf_counter()
     if intelligence != 1 and  intelligence !=2 and intelligence != 0:#on vérifie si l'ia rentrée n'est pas une ia incorrecte
         return None
-    résultats = 0
+    résultats <- 0
 
     pour chaque x allant de 0 à itérations
         résultats = résultats + fonction surface(intelligence,1,le_secret(mm2.TabCouleur))
     afficher("nombe de victoires de l'ia en %", intelligence, ":", (résultats/iterations)*100)
-    end = time.perf_counter()
+    end <- time.perf_counter()
     afficher("temps d'exécution : "+str(end - start))
-    nom_fichier = ("tests"+str(intelligence)) 
+    nom_fichier <- ("tests"+str(intelligence)) 
     # Ouvrir le fichier en mode écriture
     avec comme fichier ouvert(nom_fichier+".txt", "a") en tant que f
         f.écrire("test ia numéro " + str(intelligence)+"\n")#on écrit dans le fichier les lignes
-        now = time.localtime()
+        now <- time.localtime()
         date_heure = time.strftime("%Y-%m-%d %H:%M:%S", now) #on récupère nos données concernant l'heure de la fin du test
         f.écrire("test réalisé à " + str(date_heure) +"avec "+str(iterations)+" itérations\n")#on écrit dans le fichier correspondant la date du test et le nombre d'itérations de l'ia
         f.écrire("pourcentage de victoire de l'ia :" + str((résultats/iterations)*100)+"\n") 
@@ -696,18 +698,20 @@ fonction winrate(intelligence,iterations):
 # une fonction qui fait une moyenne d'une liste
 def moyenne(winrates):
     total = 0
+    total : int
+    winrates: list
     for x in range(len(winrates)):
         total += winrates[x]
     res = total / len(winrates)
-    print(res)
-    return (res)
+
+    return(res)
 
 #la complexité de la fonction moyenne est 0(n) car nous ne passons que dans une seule boucle
 '''
 fonction moyenne(winrates):
     pour chaque x allant de 0 à longueur de (winrates)
-        total = total+winrates[x]
-    res = total/longueur(winrates)
+        total <- total+winrates[x]
+    res <- total/longueur(winrates)
     afficher res 
     renvoyer res
 '''
@@ -716,23 +720,20 @@ fonction moyenne(winrates):
 # une fonction qui va nous permettre de récupérer toutes les données d'un des fichiers des ia pour pouvoir récupérer toutes leurs informations
 # concernant le pourcentage de victoire de l'ia concernée
 def recuperation(intelligence):
-    nomfichier = ("tests" + str(
-        intelligence) + ".txt")  # on récupère en str le nom du fichier en utilisant la variable intelligence
+    intelligence :int
+    nomfichier = ("tests" + str(intelligence) + ".txt")  # on récupère en str le nom du fichier en utilisant la variable intelligence
     with open(nomfichier, "r") as f:  # on ouvre le fichier en mode read
         lines = f.readlines()  # on lit toutes les lignes du texte
     winrates = []
     for line in lines:
-        if line.startswith(
-                "pourcentage de victoire de l'ia :"):  # on récupère toutes les listes qui commencent par la phrase "pourcentage de victoire de l'ia :
+        if line.startswith("pourcentage de victoire de l'ia :"):  # on récupère toutes les listes qui commencent par la phrase "pourcentage de victoire de l'ia :
             parts = line.split(" ")  # on sépare toutes les informations du texte
             winrate = parts[-1]  # on récupère la fin du texte splitté , dans notre cas on aura quelquechose sous cette forme ":(taux de victoire)\n"
             # Convertir le taux de victoire en un nombre flottant
-            winrate = winrate.replace(":",
-                                      "")  # on utilise replace pour enlever les ":" et les "\n" par des caractères vides
+            winrate = winrate.replace(":","")  # on utilise replace pour enlever les ":" et les "\n" par des caractères vides
             winrate = winrate.replace("\n", "")  # on peut donc convertir ce qui nous reste en float
             winrate = float(winrate)
-            winrates.append(
-                winrate)  # on ajoute le winrate a une liste de plusieurs winrates dont on va faire une moyenne juste après
+            winrates.append(winrate)  # on ajoute le winrate a une liste de plusieurs winrates dont on va faire une moyenne juste après
 
     oui = moyenne(winrates)
 
@@ -741,21 +742,21 @@ def recuperation(intelligence):
 
 '''
 fonction (intelligence):
-    nomfichier = ("tests"+str(intelligence)+".txt") 
+    nomfichier <- ("tests"+str(intelligence)+".txt") 
 
     with open(nomfichier, "r") as f:#on ouvre le fichier en mode read
-        lines = f.readlines() #on lit toutes les lignes du texte
-    winrates = []
+        lines <- f.readlines() #on lit toutes les lignes du texte
+    winrates <- []
     for pour chaque ligne dans lignes:
         if ligne commence par("pourcentage de victoire de l'ia :"):
-            parts = line.split(" ")
-            winrate = parts[-1] 
-            winrate = winrate.replace(":", "")
-            winrate = winrate.replace("\n","")
-            winrate = float(winrate)
+            parts <- line.split(" ")
+            winrate <- parts[-1] 
+            winrate <- winrate.replace(":", "")
+            winrate <- winrate.replace("\n","")
+            winrate <- float(winrate)
             winrates.append(winrate) #on ajoute le winrate a une liste de plusieurs winrates dont on va faire une moyenne juste après
 
-    oui = moyenne(winrates)
+    oui <- moyenne(winrates)
 
 
     afficher("Moyenne des taux de victoires :" + str(oui))
@@ -763,7 +764,9 @@ fonction (intelligence):
 
 
 # la fonction principale de tout le code , elle sert a gérer une partie tour par tour
-def surface(intelligence=1, modetest=0, babouin_secret=0):
+def surface(intelligence=1, modetest=0, babouin_secret=0,essai_max=18):
+    intelligence :int
+    modetest : int
     pygame.init()
     secret = le_secret(mm2.TabCouleur)
     fenetre = pygame.display.set_mode([800, 800])
@@ -788,9 +791,9 @@ def surface(intelligence=1, modetest=0, babouin_secret=0):
     if  intelligence ==2:
         gigachadlist = toutes_les_listes()
 
-    for x in range(2, 18):
+    for x in range(2, essai_max):
         res = [0, 0]
-        if x > 16:
+        if x > essai_max-2:
 
             myfont = pygame.font.SysFont("monospace", 40)
 
@@ -842,12 +845,11 @@ def surface(intelligence=1, modetest=0, babouin_secret=0):
             essai = total[0]
             gigachadlist = total[1]
             algo3list.append(essai)
-            print("essai:",essai)
-            print("longueur gigachadlist:",len(gigachadlist))
-            print(secret)
         mm2.afficherCombinaison(fenetre, essai, x)
-
-        a = Blanc2(essai, secret)
+        if intelligence == 1:
+            a = Blanc(essai,secret)
+        else:
+            a = Blanc2(essai, secret)
         res = [a, defNoir(essai, secret)]
         mm2.afficherResultat(fenetre, res, x)
         pygame.display.update()
@@ -856,7 +858,8 @@ def surface(intelligence=1, modetest=0, babouin_secret=0):
 
             myfont = pygame.font.SysFont("monospace", 40)
             kl = "c'est gagné en " + str(x - 1) + " tours"
-
+            if essai_max != 18:
+                return x-2
             lab = myfont.render(kl, 1, mm2.Noir)
             fenetre.blit(lab, [200, 750])
             myfont = pygame.font.SysFont("monospace", 20)
@@ -894,47 +897,47 @@ def surface(intelligence=1, modetest=0, babouin_secret=0):
 '''
 fonction surface(intelligence=1, modetest=0, babouin_secret=0):
     pygame.init()
-    secret = le_secret(mm2.TabCouleur)
-    fenetre = pygame.display.set_mode([800, 800])
+    secret <- le_secret(mm2.TabCouleur)
+    fenetre <- pygame.display.set_mode([800, 800])
     fenetre.fill(mm2.Blanc)
     mm2.afficherPlateau(fenetre)
     mm2.afficherChoixCouleur(fenetre)
     pygame.display.update()
 
     if modetest == 0:
-        secret = mm2.construireProposition(fenetre, 0.5)
+        secret <- mm2.construireProposition(fenetre, 0.5)
     elif modetest == 1:
-        secret = le_secret(mm2.TabCouleur)
+        secret <- le_secret(mm2.TabCouleur)
         mm2.afficherSecret(fenetre, secret)
 
-    listecouleurs = []
-    couleursessai = []
-    précédents = []
-    algo_3list = []
-    marque = 0
-    algo3codes = []
-    algo3res = []
-    gigachadlist = fonction toutes_les_listes()
+    listecouleurs <- []
+    couleursessai <- []
+    précédents <- []
+    algo_3list <- []
+    marque <- 0
+    algo3codes <- []
+    algo3res <- []
+    gigachadlist <- fonction toutes_les_listes()
 
     pour chaque x allant de (2, 18):
-        res = [0, 0]
+        res <- [0, 0]
         si x > 16:
 
-            myfont = pygame.font.SysFont("monospace", 40)
+            myfont <- pygame.font.SysFont("monospace", 40)
 
             si intelligence == 0:
-                lab = myfont.render("l'ia aléatoire a perdu ", 1, mm2.Noir)
+                lab <- myfont.render("l'ia aléatoire a perdu ", 1, mm2.Noir)
             sinon si  intelligence == 1:
-                lab = myfont.render("l'ia intelligente a perdu", 1, mm2.Noir)
+                lab <- myfont.render("l'ia intelligente a perdu", 1, mm2.Noir)
 
             sinon si  intelligence == 2:
-                lab = myfont.render("l'ia folle a perdu", 1, mm2.Noir)
+                lab <- myfont.render("l'ia folle a perdu", 1, mm2.Noir)
             fenetre.blit(lab, [150, 750])
 
-            myfont = pygame.font.SysFont("monospace", 20)
-            babouin_redemarrer = myfont.render("espace pour redémarrer", 1, mm2.Noir)
+            myfont <- pygame.font.SysFont("monospace", 20)
+            babouin_redemarrer <- myfont.render("espace pour redémarrer", 1, mm2.Noir)
             fenetre.blit(babouin_redemarrer, [75, 670])
-            babouin_quitter = myfont.render("echap pour quitter", 1, mm2.Noir)
+            babouin_quitter <- myfont.render("echap pour quitter", 1, mm2.Noir)
 
             fenetre.blit(babouin_quitter, [75, 690])
             pygame.display.update()
@@ -951,48 +954,48 @@ fonction surface(intelligence=1, modetest=0, babouin_secret=0):
                         exit()
 
         sinon si  intelligence == 0:
-            essai = [mm2.TabCouleur[random.randint(0, 7)] pour chaque x allant de 0 à 5]
+            essai <- [mm2.TabCouleur[random.randint(0, 7)] pour chaque x allant de 0 à 5]
             mm2.afficherCombinaison(fenetre, essai, x)
         sinon si intelligence == 1:
-            # listecouleurs = liste des couleurs definies dans le secret
-            # couleuressai = les couleurs précédentes essayées
-            # précédents = les anciens essais
+            # listecouleurs <- liste des couleurs definies dans le secret
+            # couleuressai <- les couleurs précédentes essayées
+            # précédents <- les anciens essais
 
-            total = babouin_big_cerveau(listecouleurs, couleursessai, précédents)
-            essai = total[0]
-            listecouleurs = total[1]
-            couleursessai = total[2]
-            précédents = total[3]
+            total <- babouin_big_cerveau(listecouleurs, couleursessai, précédents)
+            essai <- total[0]
+            listecouleurs <-total[1]
+            couleursessai <- total[2]
+            précédents <- total[3]
             mm2.afficherCombinaison(fenetre, essai, x)
         
         sinon si  intelligence == 2:
-            total = babouin_folie(algo3codes, algo3res, gigachadlist, x)
-            essai = total[0]
+            total <- babouin_folie(algo3codes, algo3res, gigachadlist, x)
+            essai <- total[0]
             gigachadlist = total[1]
             ajouter a algo3codes(essai)
             afficher(essai)
 
         mm2.afficherCombinaison(fenetre, essai, x)
 
-        a = Blanc(essai, secret)
-        res = [a, defNoir(essai, secret)]
+        a <- Blanc(essai, secret)
+        res <- [a, defNoir(essai, secret)]
         mm2.afficherResultat(fenetre, res, x)
         pygame.display.update()
         ajouter à algo3res(res)
         si res[1] == 5:
 
             myfont = pygame.font.SysFont("monospace", 40)
-            kl = "c'est gagné en " + str(x - 1) + " tours"
+            kl <- "c'est gagné en " + str(x - 1) + " tours"
 
-            lab = myfont.render(kl, 1, mm2.Noir)
+            lab <- myfont.render(kl, 1, mm2.Noir)
             fenetre.blit(lab, [200, 750])
-            myfont = pygame.font.SysFont("monospace", 20)
-            babouin_redemarrer = myfont.render("espace pour redémarrer", 1, mm2.Noir)
+            myfont <- pygame.font.SysFont("monospace", 20)
+            babouin_redemarrer <- myfont.render("espace pour redémarrer", 1, mm2.Noir)
             fenetre.blit(babouin_redemarrer, [75, 670])
-            babouin_quitter = myfont.render("echap pour quitter", 1, mm2.Noir)
+            babouin_quitter <- myfont.render("echap pour quitter", 1, mm2.Noir)
             fenetre.blit(babouin_quitter, [75, 690])
             pygame.display.update()
-            babouin = False
+            babouin <- False
             si == 1:
                 renvoyer 1
             tant que babouin est faux :
@@ -1016,5 +1019,143 @@ fonction surface(intelligence=1, modetest=0, babouin_secret=0):
         pygame.display.update()
         babouin = False
 '''
-for x in range (100):
-    winrate(2,100)
+#fonction qui sert a déterminer combien d'itérations en moyenne une ia a besoin pour trouver la solution , tout les
+#résultats sont stockés dans les fichiers  iterations_max(numéro de l'ia)
+def iterations_max(intelligence,itérations =100):
+    nombre_essais =0
+    temps_total = 0
+    nombre_essais : int
+    temps_total :int
+    intelligence :int
+    nom_fichier :str
+    start_time : float
+    end_time :float
+    temps_total :float
+    for x in range(itérations): #on fait faire a l'ia un nombre de partie très important de manière à savoir en combien de coups l'ia pourrais gagner
+        start_time = time.time()#on commence un timer qu'on termine 2lignes plus tard pour povoir calculer le temps que met la fonction à trouver le secret
+        nombre_essais += surface(intelligence ,1,0,1000000000000)
+        end_time = time.time()
+        temps_total += end_time-start_time
+    print("nombre d'essais en moyenne pour que l'ia ",intelligence,"gagne",nombre_essais/x)
+    print("temps moyen pour que l'ia gagne",temps_total/x)
+    nom_fichier = ("iterations_max" + str(intelligence))#on détermine le nom du fichier selon le numéro de l'ia
+    with open(nom_fichier + ".txt","a") as f:  # on ouvre en mode ajout notre fichier qui correspond a notre numéro d'ia
+        # Écrire du texte dans le fichier
+        f.write("test ia numéro " + str(intelligence) + "\n")  # on écrit dans le fichier les lignes
+        now = time.localtime()
+        date_heure = time.strftime("%Y-%m-%d %H:%M:%S",now)  # on récupère nos données concernant l'heure de la fin du test
+        f.write("test réalisé à " + str(date_heure))  # on écrit dans le fichier correspondant la date du test et le nombre d'itérations de l'ia
+        f.write("\n")
+        f.write("moyenne d'essais de l'ia pour gagner :" + str(nombre_essais/x) + "\n")  # on écrit le nombre d'essais nécéssaires à l'ia
+        f.write("temps moyen pour que l'ia gagne:"+str(temps_total/x))#on écrit le temps moyen de l'ia pour gagner une partie
+        f.write("\n")
+        f.write("\n")
+
+'''
+fonction iterations_max(intelligence):
+    nombre_essais =0
+    temps_total = 0
+    nombre_essais : int
+    temps_total :int 
+    intelligence :int
+    nom_fichier :str
+    start_time : float
+    end_time :float 
+    temps_total :float
+    pour chaque x allant de 0 à 100:
+        start_time <- time.time()
+        nombre_essais += fonction surface(intelligence ,1,0,1000000000000)
+        end_time <- time.time()
+        temps_total += end_time-start_time
+    afficher("nombre d'essais en moyenne pour que l'ia ",intelligence,"gagne",nombre_essais/x)
+    afficher("temps moyen pour que l'ia gagne",temps_total/x)
+    nom_fichier <- ("iterations_max" + str(intelligence))
+    with open(nom_fichier + ".txt","a") as f:  # on ouvre en mode ajout notre fichier qui correspond a notre numéro d'ia
+        # Écrire du texte dans le fichier
+        f.ecrire("test ia numéro " + str(intelligence) + "\n")  # on écrit dans le fichier les lignes
+        now <- time.localtime()
+        date_heure <- time.strftime("%Y-%m-%d %H:%M:%S",now)  # on récupère nos données concernant l'heure de la fin du test
+        f.ecrire("test réalisé à " + str(date_heure))  # on écrit dans le fichier correspondant la date du test et le nombre d'itérations de l'ia
+        f.ecrire("\n")
+        f.ecrire("moyenne d'essais de l'ia pour gagner :" + str(nombre_essais/x) + "\n")  # on écrit le pourcentage de victoire de l'ia
+        f.ecrire("temps moyen pour que l'ia gagne:"+str(temps_total/x))
+        f.ecrire("\n")
+        f.ecrire("\n")
+'''
+
+#une fonction qui permet de récupérer toutes les données d'une ia mise en entrée puis qui renvoie ses statistiques concernant le nombre
+#d'itérations dont elle a besoin en moyenne pour réussir une partie et ses statistiques en moyenne pour résoudre une partie de mastermind
+def recuperation_iterations(intelligence):
+    nom_fichier : str
+    nombre_essaistotal : list
+    temps_total : list
+    line :str
+    lines :list
+    temps : float
+    moyenne_temps : float
+    moyenne_essais : float
+    nom_fichier = ("iterations_max" + str(intelligence))#on détermine le nom du fichier selon le numéro de l'ia correspondante
+    nombre_essaistotal = []
+    temps_total = []
+    with open(nom_fichier + ".txt", "r") as f:#on ouvre le fichier en mode read car on a juste besoin de lire les informations
+        lines = f.readlines()
+    for line in lines:#on fait une boucle pour visiter le fichier ligne par ligne
+        if line.startswith("moyenne d'essais de l'ia pour gagner :"):#si notre ligne commence par la condition on respecte le if
+            parts = line.split(" ")
+            nombre_essais = parts[-1]
+
+            nombre_essais = nombre_essais.replace(":", "")
+            nombre_essais = nombre_essais.replace("\n", "")#on sépare les informations puis on remplace les éléments qui sont inutiles
+            nombre_essais = float(nombre_essais)#on repasse notre taux de str à float
+            nombre_essaistotal.append(nombre_essais)
+    for line in lines:
+        if line.startswith("temps moyen pour que l'ia gagne:"):
+            parts = line.split(" ")
+            temps = parts[-1]
+            temps = temps.replace(":", "")
+            temps = temps.replace("\n", "")
+            temps = temps.replace("gagne","")#meme principe que le if du dessus
+            temps = float(temps)
+            temps_total.append(temps)
+    moyenne_temps= moyenne(temps_total)
+    moyenne_essais = moyenne(nombre_essaistotal)
+    print("moyenne du nombre d'essais nécéssaires pour que l'ia ",intelligence,"gagne:",moyenne_essais)
+    print("moyenne du temps de nécéssaire pour que l'ia ",intelligence,"gagne ",moyenne_temps)
+
+
+'''
+fonction recuperation_iterations(intelligence):
+    nom_fichier <- ("iterations_max" + str(intelligence))
+    nombre_essaistotal <- []
+    temps_total <- []
+    with open(nom_fichier + ".txt", "r") as f:
+        lines <- f.readlines()
+    pour chaque line dans lignes:
+        si line.commence avec("moyenne d'essais de l'ia pour gagner :"):
+            parts <- line.split(" ")  
+            nombre_essais <- parts[-1] 
+           
+            nombre_essais <- nombre_essais.replace(":", "")  
+            nombre_essais <- nombre_essais.replace("\n", "") 
+            nombre_essais <- float(nombre_essais)
+            nombre_essaistotal.append(nombre_essais)
+    for line in lines:
+        if line.startswith("temps moyen pour que l'ia gagne:"):
+            parts <- line.split(" ")  
+            temps <- parts[-1]  
+            # Convertir le taux de victoire en un nombre flottant
+            temps <- temps.replace(":", "")  
+            temps <- temps.replace("\n", "")  
+            temps <- temps.replace("gagne","")
+            temps <- float(temps)
+            temps_total.append(temps)
+    moyenne_temps <- moyenne(temps_total)
+    moyenne_essais <- moyenne(nombre_essaistotal)
+    afficher("moyenne du nombre d'essais nécéssaires pour que l'ia ",intelligence,"gagne:",moyenne_essais)
+    afficher("moyenne du temps de nécéssaire pour que l'ia ",intelligence,"gagne ",moyenne_temps)
+'''
+recuperation_iterations(1)
+
+for x in range(100):
+   iterations_max(0,2)
+

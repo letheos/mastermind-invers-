@@ -886,3 +886,595 @@ test ia numéro 1
 test réalisé à 2023-01-11 18:27:28avec 1000 itérations
 pourcentage de victoire de l'ia :17.9
 
+test ia numéro 1
+test réalisé à 2023-01-12 09:00:49avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:00:57avec 100 itérations
+pourcentage de victoire de l'ia :14.000000000000002
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:01:04avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:01:11avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:01:18avec 100 itérations
+pourcentage de victoire de l'ia :19.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:01:25avec 100 itérations
+pourcentage de victoire de l'ia :23.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:01:32avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:01:38avec 100 itérations
+pourcentage de victoire de l'ia :19.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:01:45avec 100 itérations
+pourcentage de victoire de l'ia :25.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:01:51avec 100 itérations
+pourcentage de victoire de l'ia :25.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:01:58avec 100 itérations
+pourcentage de victoire de l'ia :24.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:02:05avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:02:11avec 100 itérations
+pourcentage de victoire de l'ia :23.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:02:18avec 100 itérations
+pourcentage de victoire de l'ia :14.000000000000002
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:02:25avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:02:32avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:02:39avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:02:45avec 100 itérations
+pourcentage de victoire de l'ia :19.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:02:52avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:02:59avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:03:06avec 100 itérations
+pourcentage de victoire de l'ia :21.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:03:14avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:03:22avec 100 itérations
+pourcentage de victoire de l'ia :24.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:03:29avec 100 itérations
+pourcentage de victoire de l'ia :24.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:03:38avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:03:44avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:03:52avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:03:59avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:04:06avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:04:12avec 100 itérations
+pourcentage de victoire de l'ia :26.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:04:19avec 100 itérations
+pourcentage de victoire de l'ia :13.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:04:26avec 100 itérations
+pourcentage de victoire de l'ia :25.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:04:33avec 100 itérations
+pourcentage de victoire de l'ia :14.000000000000002
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:04:41avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:04:48avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:04:56avec 100 itérations
+pourcentage de victoire de l'ia :14.000000000000002
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:05:04avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:05:10avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:05:17avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:05:24avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:05:32avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:05:40avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:05:48avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:05:55avec 100 itérations
+pourcentage de victoire de l'ia :10.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:06:02avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:06:08avec 100 itérations
+pourcentage de victoire de l'ia :21.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:06:15avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:06:22avec 100 itérations
+pourcentage de victoire de l'ia :28.000000000000004
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:06:29avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:06:36avec 100 itérations
+pourcentage de victoire de l'ia :14.000000000000002
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:06:43avec 100 itérations
+pourcentage de victoire de l'ia :24.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:06:51avec 100 itérations
+pourcentage de victoire de l'ia :13.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:06:58avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:07:06avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:07:13avec 100 itérations
+pourcentage de victoire de l'ia :23.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:07:19avec 100 itérations
+pourcentage de victoire de l'ia :21.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:07:26avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:07:33avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:07:40avec 100 itérations
+pourcentage de victoire de l'ia :28.999999999999996
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:07:48avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:07:55avec 100 itérations
+pourcentage de victoire de l'ia :19.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:08:02avec 100 itérations
+pourcentage de victoire de l'ia :10.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:08:10avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:08:16avec 100 itérations
+pourcentage de victoire de l'ia :12.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:08:24avec 100 itérations
+pourcentage de victoire de l'ia :21.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:08:33avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:08:41avec 100 itérations
+pourcentage de victoire de l'ia :19.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:08:49avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:08:57avec 100 itérations
+pourcentage de victoire de l'ia :19.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:09:04avec 100 itérations
+pourcentage de victoire de l'ia :23.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:09:12avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:09:17avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:09:22avec 100 itérations
+pourcentage de victoire de l'ia :26.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:09:27avec 100 itérations
+pourcentage de victoire de l'ia :21.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:09:32avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:09:37avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:09:42avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:09:48avec 100 itérations
+pourcentage de victoire de l'ia :23.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:09:53avec 100 itérations
+pourcentage de victoire de l'ia :27.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:09:58avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:03avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:08avec 100 itérations
+pourcentage de victoire de l'ia :21.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:13avec 100 itérations
+pourcentage de victoire de l'ia :27.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:18avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:23avec 100 itérations
+pourcentage de victoire de l'ia :13.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:28avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:33avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:38avec 100 itérations
+pourcentage de victoire de l'ia :23.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:43avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:48avec 100 itérations
+pourcentage de victoire de l'ia :21.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:53avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:10:58avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:11:04avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:11:08avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:11:13avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:11:20avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:11:24avec 100 itérations
+pourcentage de victoire de l'ia :27.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:11:29avec 100 itérations
+pourcentage de victoire de l'ia :19.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:11:34avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:11:38avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:55:11avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:55:20avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:55:28avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:55:36avec 100 itérations
+pourcentage de victoire de l'ia :21.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:55:43avec 100 itérations
+pourcentage de victoire de l'ia :24.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:55:51avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:56:00avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:56:09avec 100 itérations
+pourcentage de victoire de l'ia :12.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:56:16avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:56:24avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:56:32avec 100 itérations
+pourcentage de victoire de l'ia :19.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:56:41avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:56:50avec 100 itérations
+pourcentage de victoire de l'ia :12.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:56:58avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:57:06avec 100 itérations
+pourcentage de victoire de l'ia :21.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:57:15avec 100 itérations
+pourcentage de victoire de l'ia :10.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:57:22avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:57:29avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:57:36avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:57:43avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:57:50avec 100 itérations
+pourcentage de victoire de l'ia :14.000000000000002
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:57:57avec 100 itérations
+pourcentage de victoire de l'ia :23.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:58:04avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:58:11avec 100 itérations
+pourcentage de victoire de l'ia :21.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:58:18avec 100 itérations
+pourcentage de victoire de l'ia :25.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:58:26avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:58:33avec 100 itérations
+pourcentage de victoire de l'ia :23.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:58:40avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:58:48avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:58:55avec 100 itérations
+pourcentage de victoire de l'ia :24.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:59:02avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:59:09avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:59:16avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:59:25avec 100 itérations
+pourcentage de victoire de l'ia :14.000000000000002
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:59:32avec 100 itérations
+pourcentage de victoire de l'ia :12.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:59:41avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:59:47avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 09:59:55avec 100 itérations
+pourcentage de victoire de l'ia :12.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 10:00:01avec 100 itérations
+pourcentage de victoire de l'ia :17.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 10:00:09avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 10:00:16avec 100 itérations
+pourcentage de victoire de l'ia :22.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 10:00:23avec 100 itérations
+pourcentage de victoire de l'ia :15.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 10:00:30avec 100 itérations
+pourcentage de victoire de l'ia :13.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 10:00:38avec 100 itérations
+pourcentage de victoire de l'ia :14.000000000000002
+
+test ia numéro 1
+test réalisé à 2023-01-12 10:00:47avec 100 itérations
+pourcentage de victoire de l'ia :16.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 10:00:54avec 100 itérations
+pourcentage de victoire de l'ia :20.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 10:01:01avec 100 itérations
+pourcentage de victoire de l'ia :18.0
+
+test ia numéro 1
+test réalisé à 2023-01-12 10:01:09avec 100 itérations
+pourcentage de victoire de l'ia :19.0
+
