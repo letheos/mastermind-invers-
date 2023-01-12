@@ -12,6 +12,7 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 couleur = (39, 174, 173)
 
+
 class Button:
     def __init__(self, text, pos):
         self.text = text
@@ -36,8 +37,7 @@ buttons = []
 buttons.append(Button("Jouer", (screen_width // 2 - 50, 100)))
 buttons.append(Button("Paramètres", (screen_width // 2 - 75, 150)))
 buttons.append(Button("Crédits", (screen_width // 2 - 50, 200)))
-buttons.append(Button("Quitter",  (screen_width // 2 - 60, 250)))
-
+buttons.append(Button("Quitter", (screen_width // 2 - 60, 250)))
 
 # Calculer la position de chaque bouton
 button_width, button_height = 150, 50

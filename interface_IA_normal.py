@@ -1,40 +1,23 @@
 import pygame
-import pygame.freetype
 import tkinter as tk
+import mastermind_inversé
+import interface
 
-# Initialiser Pygame et le module de lecture de musique
-pygame.init()
+# Initialiser la  lecture de musique
 pygame.mixer.init()
-
-# Charger le fichier audio dans votre programme
+# Charger le fichier audio
 pygame.mixer.music.load("music.mp3")
 pygame.mixer.music.set_volume(0.1)
 pygame.mixer.music.play()
-
-# Définir la taille de la fenêtre
-largeur, hauteur = 1000, 700
-fenetre = pygame.display.set_mode((largeur, hauteur))
 
 # Définir les couleurs
 noir = (0, 0, 0)
 blanc = (255, 255, 255)
 couleur = (39, 174, 173)
-rouge  = (255, 0, 0)
+rouge = (255, 0, 0)
 
-# Créer la police de caractères
-font = pygame.font.Font("KDA.ttf", 60)  # Police de caractères de taille 36
 
-# Créer la surface de texte contenant le mot "Mastermind"
-surface_texte_M = font.render("Mastermind", True, rouge)
-
-# Obtenir les dimensions de la surface de texte
-Dimmensions_texte = surface_texte_M.get_rect()
-
-# Modifier la position de la surface de texte pour qu'elle soit tout en haut et centrée horizontalement de la fenêtre
-Dimmensions_texte.y = 40  # Tout en haut de la fenêtre
-Dimmensions_texte.x = (largeur - Dimmensions_texte.width) // 2  # Centré horizontalement
-
-class Button:
+class Boutton:
     def __init__(self, text, pos):
         # Charger la police de caractères
         self.font = pygame.font.Font("style.ttf", 70)
@@ -46,119 +29,120 @@ class Button:
         # Dessiner le fond du bouton
         pygame.draw.rect(fenetre, blanc, self.rect)
 
-        # Dessiner la bordure noire autour du bouton
+        # bordure noire autour des bouttons
         pygame.draw.rect(fenetre, noir, self.rect, 2)  # Bordure d'épaisseur 2 pixels
 
-        # Dessiner le texte du bouton en utilisant la police de caractères chargée
+        # texte
         surface_texte = self.font.render(self.text, True, noir)
         Dimmensions_texte = surface_texte.get_rect(center=self.rect.center)
         fenetre.blit(surface_texte, Dimmensions_texte)
 
 
-# Créer les boutons
-buttons = []
-buttons.append(Button("Jouer", (0, 0)))
-buttons.append(Button("Credits", (0, 0)))
-buttons.append(Button("Quitter", (0, 0)))
+def game():
+    # Initialiser Pygame
+    pygame.init()
 
-# Calculer la position de chaque bouton
-button_width, button_height = 300, 75
-vertical_spacing = 80  # Espacement vertical entre les boutons
-for i, button in enumerate(buttons):
-    button_x = (largeur - button_width) // 2
-    button_y = 200 + i * (button_height + vertical_spacing)  # Modification ici
-    button_pos = (button_x, button_y)
-    button.rect = pygame.Rect(button_pos, (button_width, button_height))
-    # Initialiser la police pour les crédits
-    credits_font = pygame.freetype.Font("style.ttf", 16)
+    # Définir la taille de la fenêtre
+    largeur, hauteur = 1000, 700
+    fenetre = pygame.display.set_mode((largeur, hauteur))
 
-# Boucle principale
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-            # Vérifier si l'utilisateur a cliqué sur un bouton
-            for button in buttons:
-                if button.rect.collidepoint(event.pos):
-                    # Action à effectuer lorsque le bouton est cliqué
-                    if button.text == "Jouer":
-                        # Initialize Pygame
-                        pygame.init()
-                        fenetre = pygame.display.set_mode((largeur, hauteur))
+    # police de caractères
+    font = pygame.font.Font("KDA.ttf", 60)  # Police de caractères de taille 60
 
-                        # Create the buttons
-                        buttons = []
-                        buttons.append(Button("Mastemind Normal", (0,0)))
-                        buttons.append(Button("Mastermind IA", (0,0)))
+    # Mastermind
+    surface_texte_M = font.render("Mastermind", True, rouge)
 
-                        # Calculer la position de chaque bouton
-                        button_width, button_height = 800, 75
-                        vertical_spacing = 150  # Espacement vertical entre les boutons
-                        for i, button in enumerate(buttons):
-                            button_x = (largeur - button_width) // 2
-                            button_y = 200 + i * (button_height + vertical_spacing)
-                            button_pos = (button_x, button_y)
-                            button.rect = pygame.Rect(button_pos, (button_width, button_height))
-                    elif button.text == "Mastemind Normal":
-                        pygame.mixer.music.stop()
-                        pygame.mixer.music.load()
-                        pygame.mixer.music.set_volume(0.1)
-                        pygame.mixer.music.play()
-                    elif button.text == "Mastermind IA":
-                        # Initialize Pygame
-                        pygame.init()
-                        fenetre = pygame.display.set_mode((largeur, hauteur))
+    # dimmensions
+    Dimmensions_texte = surface_texte_M.get_rect()
 
-                        # Create the buttons
-                        buttons = []
-                        buttons.append(Button("Mastermind petit QI", (0,0)))
-                        buttons.append(Button("Mastermind moyen QI", (0,0)))
-                        buttons.append(Button("Mastermind gros QI", (0,0)))
+    # Modifie la position du texte
+    Dimmensions_texte.y = 40  # haut de la fenêtre
+    Dimmensions_texte.x = (largeur - Dimmensions_texte.width) // 2  # Centré
 
-                        # Calculer la position de chaque bouton
-                        button_width, button_height = 600, 75
-                        vertical_spacing = 100  # Espacement vertical entre les boutons
-                        for i, button in enumerate(buttons):
-                            button_x = (largeur - button_width) // 2
-                            button_y = 200 + i * (button_height + vertical_spacing)
-                            button_pos = (button_x, button_y)
-                            button.rect = pygame.Rect(button_pos, (button_width, button_height))
+    def calcule_position(bouttons, boutton_largeur, boutton_hauteur, Espacement):
+        for i, boutton in enumerate(bouttons):
+            if boutton.text == "Menu":
+                boutton_pos = (675, 600)
+                boutton.rect = pygame.Rect(boutton_pos, (300, 80))
+            else:
+                boutton_x = (largeur - boutton_largeur) // 2
+                boutton_y = 200 + i * (boutton_hauteur + Espacement)
+                boutton_pos = (boutton_x, boutton_y)
+                boutton.rect = pygame.Rect(boutton_pos, (boutton_largeur, boutton_hauteur))
 
-                    elif button.text == "Mastermind petit QI":
-                        pygame.mixer.music.stop()
-                        pygame.mixer.music.load()
-                        pygame.mixer.music.set_volume(0.1)
-                        pygame.mixer.music.play()
-                    elif button.text == "Mastermind moyen QI":
-                        pygame.mixer.music.stop()
-                        pygame.mixer.music.load()
-                        pygame.mixer.music.set_volume(0.1)
-                        pygame.mixer.music.play()
-                    elif button.text == "Mastermind gros QI":
-                        pygame.mixer.music.stop()
-                        pygame.mixer.music.load()
-                        pygame.mixer.music.set_volume(0.1)
-                        pygame.mixer.music.play()
-                    elif button.text == "Credits":
-                        # Ouvrir une nouvelle fenêtre pour afficher les crédits
-                        credits_window = tk.Tk()
-                        credits_window.title("Crédits")
-                        credits_text = tk.Label(credits_window,
-                                                text="Concepteur :\nTheo Parent\nTheo Duterte--Richardot\nLoick Mornaux\nDroit de conception squirrel monkey corp",
-                                                font=("Arial", 16))
-                        credits_text.pack()
-                        credits_window.mainloop()
-                    elif button.text == "Quitter":
-                        running = False
+    def changement_musique(lamusique):
+        pygame.mixer.music.stop()
+        pygame.mixer.music.load(lamusique)
+        pygame.mixer.music.set_volume(0.1)
+        pygame.mixer.music.play()
 
-    # Dessiner la fenêtre
-    fenetre.fill(couleur)
-    fenetre.blit(surface_texte_M, Dimmensions_texte)  #afficher le texte
-    for button in buttons:
-        button.draw(fenetre)  # actualiser l'affichage
-    pygame.display.flip()
-    pygame.display.set_caption("Mastermind de la squirrel monkey corp")
-# Quitter Pygame
-pygame.quit()
+    def initialiser_fenetre():
+        pygame.init()
+        pygame.display.set_mode((largeur, hauteur))
+
+    # Créer les boutons
+    bouttons = [Boutton("Jouer", (0, 0)), Boutton("Credits", (0, 0)), Boutton("Quitter", (0, 0))]
+
+    calcule_position(bouttons, 300, 75, 80)
+
+    # Boucle principale
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                # Vérifier si l'utilisateur a cliqué sur un bouton
+                for button in bouttons:
+                    if button.rect.collidepoint(event.pos):
+                        # Action effectuer lorsque le bouton est cliqué
+                        if button.text == "Jouer":
+                            initialiser_fenetre()
+                            bouttons = [Boutton("Mastemind Normal", (0, 0)), Boutton("Mastermind IA", (0, 0)),
+                                        Boutton("Menu", (825, 625))]
+                            calcule_position(bouttons, 800, 75, 150)
+                        elif button.text == "Mastemind Normal":
+                            changement_musique(
+                                "Puzzles 8 (1 Hour version) - Professor Layton vs. Phoenix Wright Ace Attorney (128 kbps).mp3")
+                            interface.surface()
+                        elif button.text == "Mastermind IA":
+
+                            initialiser_fenetre()
+                            bouttons = [Boutton("Mastermind petit QI", (0, 0)), Boutton("Mastermind moyen QI", (0, 0)),
+                                        Boutton("Mastermind gros QI", (0, 0)), Boutton("Menu", (825, 625))]
+                            calcule_position(bouttons, 600, 75, 80)
+                        elif button.text == "Mastermind petit QI":
+                            changement_musique("crab_rave.mp3")
+                            mastermind_inversé.surface(0)
+                        elif button.text == "Mastermind moyen QI":
+                            changement_musique("Thank You for Everything.mp3")
+                            mastermind_inversé.surface(1)
+                        elif button.text == "Mastermind gros QI":
+                            changement_musique("esprits-de-lumieres.mp3")
+                            mastermind_inversé.surface((2))
+                        elif button.text == "Credits":
+                            # Ouvrir une nouvelle fenêtre pour afficher les crédits
+                            credits_window = tk.Tk()
+                            credits_window.title("Crédits")
+                            credits_text = tk.Label(credits_window,
+                                                    text="Concepteur :\nTheo Parrent\nTheo Duterte--Richardot\nLoick Mornaux\nDroit de conception squirrel monkey corp",
+                                                    font=("Arial", 16))
+                            credits_text.pack()
+                            credits_window.mainloop()
+                        elif button.text == "Quitter":
+                            running = False
+                        elif button.text == "Menu":
+                            game()
+
+        # Dessiner la fenêtre
+        fenetre.fill(couleur)
+        fenetre.blit(surface_texte_M, Dimmensions_texte)  # afficher le texte
+        for button in bouttons:
+            button.draw(fenetre)  # actualiser l'affichage
+        pygame.display.flip()
+        pygame.display.set_caption("Mastermind de la squirrel monkey corp")
+    # Quitter Pygame
+    pygame.quit()
+
+
+game()

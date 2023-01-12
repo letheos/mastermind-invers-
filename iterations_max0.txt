@@ -1,0 +1,80 @@
+test ia numéro 0
+test réalisé à 2023-01-12 15:55:19
+moyenne d'essais de l'ia pour gagner :60368.0
+temps moyen pour que l'ia gagne:262.8269011974335
+
+test ia numéro 0
+test réalisé à 2023-01-12 15:58:55
+moyenne d'essais de l'ia pour gagner :29473.0
+temps moyen pour que l'ia gagne:216.019061088562
+
+test ia numéro 0
+test réalisé à 2023-01-12 16:13:36
+moyenne d'essais de l'ia pour gagner :68632.0
+temps moyen pour que l'ia gagne:881.3999965190887
+
+test ia numéro 0
+test réalisé à 2023-01-12 16:35:45
+moyenne d'essais de l'ia pour gagner :101462.0
+temps moyen pour que l'ia gagne:1328.5123925209045
+
+test ia numéro 0
+test réalisé à 2023-01-12 16:43:57
+moyenne d'essais de l'ia pour gagner :37582.0
+temps moyen pour que l'ia gagne:491.82074880599976
+
+test ia numéro 0
+test réalisé à 2023-01-12 17:01:23
+moyenne d'essais de l'ia pour gagner :79224.0
+temps moyen pour que l'ia gagne:1046.0564172267914
+
+test ia numéro 0
+test réalisé à 2023-01-12 17:19:42
+moyenne d'essais de l'ia pour gagner :69470.0
+temps moyen pour que l'ia gagne:1098.9960622787476
+
+test ia numéro 0
+test réalisé à 2023-01-12 17:31:34
+moyenne d'essais de l'ia pour gagner :148536.0
+temps moyen pour que l'ia gagne:711.904310464859
+
+test ia numéro 0
+test réalisé à 2023-01-12 17:38:25
+moyenne d'essais de l'ia pour gagner :26705.0
+temps moyen pour que l'ia gagne:411.4236354827881
+
+test ia numéro 0
+test réalisé à 2023-01-12 18:00:53
+moyenne d'essais de l'ia pour gagner :95286.0
+temps moyen pour que l'ia gagne:1347.9736948013306
+
+test ia numéro 0
+test réalisé à 2023-01-12 18:08:29
+moyenne d'essais de l'ia pour gagner :31711.0
+temps moyen pour que l'ia gagne:456.56607961654663
+
+test ia numéro 0
+test réalisé à 2023-01-12 18:12:22
+moyenne d'essais de l'ia pour gagner :36023.0
+temps moyen pour que l'ia gagne:232.23732352256775
+
+test ia numéro 0
+test réalisé à 2023-01-12 18:25:50
+moyenne d'essais de l'ia pour gagner :65081.0
+temps moyen pour que l'ia gagne:808.6875276565552
+
+test ia numéro 0
+test réalisé à 2023-01-12 18:34:09
+moyenne d'essais de l'ia pour gagner :40037.0
+temps moyen pour que l'ia gagne:498.6546561717987
+
+test ia numéro 0
+test réalisé à 2023-01-12 18:38:38
+moyenne d'essais de l'ia pour gagner :20911.0
+temps moyen pour que l'ia gagne:269.3873498439789
+
+test ia numéro 0
+test réalisé à 2023-01-12 18:45:39
+moyenne d'essais de l'ia pour gagner :33352.0
+temps moyen pour que l'ia gagne:420.2064731121063
+
