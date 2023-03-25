@@ -2,7 +2,7 @@ To setup the game execute "interface_IA_normal"
 
 
 # mastermind-invers-
-mastermind inversé réalisé par la squirrel monkney corp
+mastermind inversé réalisé par la squirrel monkey corp
 Cher utilisateur,
 
 Nous sommes ravis de vous présenter la lettre de licence pour votre programme au nom de Squirrel Monkey Corp.
